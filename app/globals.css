@@ -1,0 +1,15 @@
+
+@import "tw-animate-css";
+
+@import "tailwindcss";
+
+@tailwind utilities;
+
+@theme{
+  --color-azule: #082135;
+  --color-azulc: #274c77;
+  --color-branco: #e7ecef;
+  --color-cinza: #8b8c89;
+  --color-vinho: #540b0e;
+  --color-ouro: #ab8349;
+}

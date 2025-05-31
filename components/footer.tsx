@@ -38,15 +38,17 @@ export default function Footer() {
           <section>
             <h3 className="mb-4 text-lg font-bold">Contato</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
+              <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 shrink-0" aria-hidden="true" />
                 <span>(71) 9999-9999</span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 shrink-0" aria-hidden="true" />
-                <span>contato@clinicamarcelodaltro.com.br</span>
+                <span className="break-all">
+                  contato@clinicamarcelodaltro.com.br
+                </span>
               </li>
-              <li className="flex items-start">
+              <li className="flex items-center">
                 <MapPin className="mr-2 h-5 w-5 shrink-0" aria-hidden="true" />
                 <span>Av. Principal, 123 - Salvador, BA</span>
               </li>

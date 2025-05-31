@@ -63,7 +63,7 @@ export default function Navbar() {
         </nav>
 
         {/* Botão menu mobile */}
-        <div className="flex md:hidden text-text-muted ">
+        <div className="flex md:hidden text-text-muted px-4">
           <Button
             size="icon"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

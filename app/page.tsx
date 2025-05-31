@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="text-text-muted bg-header p-1 md:p-0 flex justify-center">
-        <div className="container flex min-h-[500px] flex-col items-center justify-center py-12 text-center md:py-24">
+      <section className="text-text-muted bg-header px-4 md:px-0 py-1 md:py-0 flex justify-center">
+        <div className="container px-4 flex min-h-[500px] flex-col items-center justify-center py-12 text-center md:py-24">
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
             Texto Principal Aqui!
           </h1>
@@ -103,7 +103,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 px-0">
             {[
               {
                 title: "Implantes Dentários",

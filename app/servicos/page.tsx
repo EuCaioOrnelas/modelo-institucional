@@ -1,8 +1,15 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function ServicosPage() {
   const servicosCategories = [
@@ -60,17 +67,20 @@ export default function ServicosPage() {
       services: [
         {
           title: "Aparelho Convencional",
-          description: "Tratamento com braquetes metálicos para correção de problemas de alinhamento e oclusão.",
+          description:
+            "Tratamento com braquetes metálicos para correção de problemas de alinhamento e oclusão.",
           image: "/placeholder.svg?height=200&width=300",
         },
         {
           title: "Aparelho Estético",
-          description: "Braquetes transparentes ou da cor do dente, proporcionando um tratamento mais discreto.",
+          description:
+            "Braquetes transparentes ou da cor do dente, proporcionando um tratamento mais discreto.",
           image: "/placeholder.svg?height=200&width=300",
         },
         {
           title: "Alinhadores Invisíveis",
-          description: "Placas transparentes e removíveis que alinham os dentes de forma praticamente imperceptível.",
+          description:
+            "Placas transparentes e removíveis que alinham os dentes de forma praticamente imperceptível.",
           image: "/placeholder.svg?height=200&width=300",
         },
       ],
@@ -81,7 +91,8 @@ export default function ServicosPage() {
       services: [
         {
           title: "Endodontia (Tratamento de Canal)",
-          description: "Remoção do nervo inflamado ou infectado, preservando o dente natural e aliviando a dor.",
+          description:
+            "Remoção do nervo inflamado ou infectado, preservando o dente natural e aliviando a dor.",
           image: "/placeholder.svg?height=200&width=300",
         },
         {
@@ -98,27 +109,36 @@ export default function ServicosPage() {
         },
       ],
     },
-  ]
+  ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-muted py-12 md:py-16 text-center border-b">
-        <div className="container">
-          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">Nossos Serviços</h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Conheça os tratamentos odontológicos oferecidos pela Clínica Marcelo Daltro
+      <section className="bg-header py-12 md:py-16 text-center border-b text-text-muted">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+            Nossos Serviços
+          </h1>
+          <p className="mt-4 text-lg">
+            Conheça os tratamentos odontológicos oferecidos pela Clínica Marcelo
+            Daltro
           </p>
         </div>
       </section>
 
       {/* Serviços por Categoria */}
       <section className="py-12 md:py-16 p-10">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <Tabs defaultValue="estetica" className="w-full">
             <TabsList className="mb-8 flex w-full flex-wrap justify-start gap-2">
               {servicosCategories.map((category) => (
-                <TabsTrigger key={category.id} value={category.id} className="text-sm md:text-base border-ouro">
+                <TabsTrigger
+                  key={category.id}
+                  value={category.id}
+                  className="text-sm md:text-base text-primary border border-primary px-4 py-2 rounded 
+                 hover:bg-primary hover:text-white 
+                 data-[state=active]:bg-primary data-[state=active]:text-white"
+                >
                   {category.name}
                 </TabsTrigger>
               ))}
@@ -140,10 +160,16 @@ export default function ServicosPage() {
                         <CardTitle>{service.title}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <CardDescription className="text-base">{service.description}</CardDescription>
+                        <CardDescription className="text-base">
+                          {service.description}
+                        </CardDescription>
                       </CardContent>
                       <CardFooter>
-                        <Button variant="outline" size="sm" asChild>
+                        <Button
+                          size="sm"
+                          asChild
+                          className=" text-text-muted border-primary bg-primary hover:border-primary hover:text-on-primary hover:cursor-pointer"
+                        >
                           <Link href="/contato">Agendar Consulta</Link>
                         </Button>
                       </CardFooter>
@@ -157,9 +183,11 @@ export default function ServicosPage() {
       </section>
 
       {/* Diferenciais */}
-      <section className="bg-muted py-12 md:py-16 p-10">
-        <div className="container">
-          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">Nossos Diferenciais</h2>
+      <section className="bg-surface py-12 md:py-16 p-10">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">
+            Nossos Diferenciais
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
@@ -183,9 +211,12 @@ export default function ServicosPage() {
                   "Cada paciente recebe um plano de tratamento individualizado de acordo com suas necessidades.",
               },
             ].map((diferencial, i) => (
-              <div key={i} className="rounded-lg bg-background p-6 shadow-sm border-ouro border-1">
+              <div
+                key={i}
+                className="rounded-lg bg-surface p-6 shadow-sm border-border border-1"
+              >
                 <h3 className="mb-3 text-xl font-bold">{diferencial.title}</h3>
-                <p className="text-muted-foreground">{diferencial.description}</p>
+                <p className="text-text">{diferencial.description}</p>
               </div>
             ))}
           </div>
@@ -194,16 +225,23 @@ export default function ServicosPage() {
 
       {/* CTA */}
       <section className="py-12 md:py-16 p-10">
-        <div className="container text-center">
-          <h2 className="mb-6 text-2xl font-bold md:text-3xl">Agende sua Consulta</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Entre em contato conosco para agendar uma avaliação e conhecer mais sobre nossos tratamentos.
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+            Agende sua Consulta
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-text">
+            Entre em contato conosco para agendar uma avaliação e conhecer mais
+            sobre nossos tratamentos.
           </p>
-          <Button size="lg" asChild    className="border-2 text-ouro   hover:text-branco">
+          <Button
+            size="lg"
+            asChild
+            className="text-text-muted   hover:text-on-primary"
+          >
             <Link href="/contato">Agendar Consulta</Link>
           </Button>
         </div>
       </section>
     </>
-  )
+  );
 }

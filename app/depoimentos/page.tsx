@@ -1,6 +1,8 @@
-import Image from "next/image"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Star } from "lucide-react"
+import Image from "next/image";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Star } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function DepoimentosPage() {
   const depoimentos = [
@@ -76,23 +78,26 @@ export default function DepoimentosPage() {
       image: "/placeholder.svg?height=100&width=100",
       rating: 5,
     },
-  ]
+  ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-muted py-12 md:py-16 text-center border-b">
-        <div className="container">
-          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">Depoimentos</h1>
-          <p className="mt-4  text-lg text-muted-foreground">
-            Confira o que nossos pacientes dizem sobre os tratamentos realizados na Clínica Marcelo Daltro
+      <section className="text-text-muted bg-header py-12 md:py-16 text-center border-b">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+            Depoimentos
+          </h1>
+          <p className="mt-4  text-lg">
+            Confira o que nossos pacientes dizem sobre os tratamentos realizados
+            na Clínica Marcelo Daltro
           </p>
         </div>
       </section>
 
       {/* Depoimentos */}
       <section className="py-12 md:py-16 p-10">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {depoimentos.map((depoimento, i) => (
               <Card key={i} className="flex flex-col">
@@ -111,12 +116,17 @@ export default function DepoimentosPage() {
                       <p className="font-semibold">
                         {depoimento.name}, {depoimento.age}
                       </p>
-                      <p className="text-sm text-muted-foreground">Tratamento: {depoimento.treatment}</p>
+                      <p className="text-sm text-text">
+                        Tratamento: {depoimento.treatment}
+                      </p>
                       <div className="mt-1 flex items-center space-x-1">
                         {Array(depoimento.rating)
                           .fill(0)
                           .map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-ouro text-primary" />
+                            <Star
+                              key={i}
+                              className="h-4 w-4 fill-accent text-accent"
+                            />
                           ))}
                       </div>
                     </div>
@@ -132,14 +142,24 @@ export default function DepoimentosPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary py-12 text-primary-foreground md:py-16 p-10">
-        <div className="container text-center">
-          <h2 className="mb-4 text-2xl font-bold md:text-3xl">Seja o Próximo Caso de Sucesso</h2>
-          <p className="mx-auto mb-0 max-w-2xl text-lg">
-            Agende uma consulta e transforme seu sorriso com a Clínica Marcelo Daltro.
+      <section className="bg-branco py-16 md:py-24 p-10 text-preto">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+            Seja o Próximo Caso de Sucesso!
+          </h2>
+          <p className="mx-auto mb-8 max-w-xl text-lg">
+            Agende uma consulta e transforme seu sorriso com a Clínica Marcelo
+            Daltro.
           </p>
+          <Button
+            size="lg"
+            asChild
+            className="text-text-muted border-primary bg-primary hover:text-on-primary hover:cursor-pointer"
+          >
+            <Link href="/contato">Agendar Consulta</Link>
+          </Button>
         </div>
       </section>
     </>
-  )
+  );
 }

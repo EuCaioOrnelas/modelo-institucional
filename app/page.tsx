@@ -14,10 +14,10 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary to-primary/80 text-ouro bg-azulc md:p-0 p-1  ">
+      <section className="text-text-muted bg-header p-1 md:p-0 flex justify-center">
         <div className="container flex min-h-[500px] flex-col items-center justify-center py-12 text-center md:py-24">
           <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            Sorria com Confiança
+            Texto Principal Aqui!
           </h1>
           <p className="mb-8 max-w-2xl text-lg md:text-xl">
             Na Clínica Marcelo Daltro, oferecemos tratamentos odontológicos de
@@ -27,15 +27,14 @@ export default function Home() {
             <Button
               size="lg"
               asChild
-              className="border-2  hover:text-branco"
+              className="border-primary bg-primary hover:border-primary hover:text-on-primary hover:cursor-pointer"
             >
               <Link href="/contato">Agendar Consulta</Link>
             </Button>
             <Button
               size="lg"
-              variant="outline"
               asChild
-              className=" border-2   hover:text-branco"
+              className="border-primary bg-primary hover:border-primary hover:text-on-primary hover:cursor-pointer"
             >
               <Link href="/servicos">Nossos Serviços</Link>
             </Button>
@@ -44,8 +43,8 @@ export default function Home() {
       </section>
 
       {/* Sobre Nós Preview */}
-      <section className="py-16 md:py-24 p-2 " >
-        <div className="container">
+      <section className="py-16 md:py-24 p-2 bg-surface">
+        <div className="container mx-auto px-4">
           <div className="grid gap-8 md:grid-cols-2 md:gap-12 lg:items-center">
             <div>
               <Image
@@ -56,18 +55,18 @@ export default function Home() {
                 className="rounded-lg object-cover"
               />
             </div>
-            <div>
-              <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+            <div className="flex flex-col justify-center">
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl text-text">
                 Sobre a Clínica Marcelo Daltro
               </h2>
-              <p className="mb-6 text-lg text-muted-foregouroround">
+              <p className="mb-6 text-lg text-text">
                 Há mais de 15 anos, a Clínica Marcelo Daltro é referência em
                 tratamentos odontológicos de alta qualidade em Salvador. Nossa
                 equipe de profissionais altamente qualificados está comprometida
                 em proporcionar o melhor atendimento e os mais avançados
                 tratamentos para nossos pacientes.
               </p>
-              <ul className="mb-8 space-y-3">
+              <ul className="mb-8 space-y-3 text-text">
                 {[
                   "Equipe especializada",
                   "Tecnologia de ponta",
@@ -80,7 +79,10 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <Button asChild className="border-2 text-ouro  hover:text-branco">
+              <Button
+                asChild
+                className="text-text-muted border-primary bg-primary hover:border-primary bg-primary hover:text-on-primary hover:cursor-pointer"
+              >
                 <Link href="/sobre">Conheça Nossa História</Link>
               </Button>
             </div>
@@ -89,13 +91,13 @@ export default function Home() {
       </section>
 
       {/* Serviços */}
-      <section className="bg-muted py-16 md:py-24 p-10 bg-azulc">
-        <div className="container">
-          <div className="mb-12 text-center">
+      <section className="bg-muted py-16 md:py-24 p-10 bg-background text-text">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center max-w-3xl mx-auto">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
               Nossos Serviços
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            <p className="mx-auto text-lg text-text">
               Oferecemos uma ampla gama de tratamentos odontológicos para cuidar
               da saúde e da beleza do seu sorriso.
             </p>
@@ -161,7 +163,11 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button asChild size="lg" className="border-2 text-ouro   hover:text-branco">
+            <Button
+              asChild
+              size="lg"
+              className="text-text-muted border-primary bg-primary hover:border-primary hover:text-on-primary hover:cursor-pointer"
+            >
               <Link href="/servicos">Ver Todos os Serviços</Link>
             </Button>
           </div>
@@ -169,13 +175,13 @@ export default function Home() {
       </section>
 
       {/* Depoimentos */}
-      <section className="py-16 md:py-24 p-10">
-        <div className="container">
-          <div className="mb-12 text-center">
+      <section className="py-16 md:py-24 p-10 bg-surface text-text">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center max-w-3xl mx-auto">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
               O Que Nossos Pacientes Dizem
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            <p className="mx-auto max-w-2xl text-lg text-text">
               A satisfação dos nossos pacientes é o nosso maior orgulho. Confira
               alguns depoimentos.
             </p>
@@ -207,7 +213,7 @@ export default function Home() {
                       .map((_, i) => (
                         <Star
                           key={i}
-                          className="h-5 w-5 fill-ouro text-primary"
+                          className="h-5 w-5 fill-accent text-accent"
                         />
                       ))}
                   </div>
@@ -221,7 +227,11 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button asChild variant="outline" size="lg" className="border-2 text-ouro   hover:text-branco ">
+            <Button
+              asChild
+              size="lg"
+              className="text-text-muted border-primary bg-primary hover:text-on-primary hover:cursor-pointer"
+            >
               <Link href="/depoimentos">Ver Mais Depoimentos</Link>
             </Button>
           </div>
@@ -229,19 +239,19 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary py-16 text-primary-foreground  p-10 md:py-24">
-        <div className="container text-center">
+      <section className="bg-branco py-16 md:py-24 p-10 text-preto">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
           <h2 className="mb-6 text-3xl font-bold md:text-4xl">
             Pronto para Transformar seu Sorriso?
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg">
+          <p className="mx-auto mb-8 max-w-xl text-lg">
             Agende uma consulta hoje mesmo e dê o primeiro passo para um sorriso
             mais saudável e bonito.
           </p>
           <Button
             size="lg"
             asChild
-           className="border-2 text-ouro   hover:text-branco"
+            className="text-text-muted border-primary bg-primary hover:text-on-primary hover:cursor-pointer"
           >
             <Link href="/contato">Agendar Consulta</Link>
           </Button>

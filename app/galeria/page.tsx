@@ -1,5 +1,7 @@
-import Image from "next/image"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from "next/image";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function GaleriaPage() {
   const categorias = [
@@ -25,7 +27,8 @@ export default function GaleriaPage() {
           title: "Caso 3 - Protocolo",
           before: "/placeholder.svg?height=300&width=400",
           after: "/placeholder.svg?height=300&width=400",
-          description: "Paciente com perda total dos dentes superiores. Foi realizado protocolo sobre implantes.",
+          description:
+            "Paciente com perda total dos dentes superiores. Foi realizado protocolo sobre implantes.",
         },
       ],
     },
@@ -44,13 +47,15 @@ export default function GaleriaPage() {
           title: "Caso 2 - Clareamento",
           before: "/placeholder.svg?height=300&width=400",
           after: "/placeholder.svg?height=300&width=400",
-          description: "Paciente com dentes amarelados. Foi realizado clareamento em consultório e caseiro.",
+          description:
+            "Paciente com dentes amarelados. Foi realizado clareamento em consultório e caseiro.",
         },
         {
           title: "Caso 3 - Restaurações Estéticas",
           before: "/placeholder.svg?height=300&width=400",
           after: "/placeholder.svg?height=300&width=400",
-          description: "Paciente com dentes anteriores fraturados. Foram realizadas restaurações com resina composta.",
+          description:
+            "Paciente com dentes anteriores fraturados. Foram realizadas restaurações com resina composta.",
         },
       ],
     },
@@ -62,43 +67,55 @@ export default function GaleriaPage() {
           title: "Caso 1 - Aparelho Convencional",
           before: "/placeholder.svg?height=300&width=400",
           after: "/placeholder.svg?height=300&width=400",
-          description: "Paciente com apinhamento severo. Tratamento com aparelho convencional por 2 anos.",
+          description:
+            "Paciente com apinhamento severo. Tratamento com aparelho convencional por 2 anos.",
         },
         {
           title: "Caso 2 - Aparelho Estético",
           before: "/placeholder.svg?height=300&width=400",
           after: "/placeholder.svg?height=300&width=400",
-          description: "Paciente com diastemas. Tratamento com aparelho estético por 18 meses.",
+          description:
+            "Paciente com diastemas. Tratamento com aparelho estético por 18 meses.",
         },
         {
           title: "Caso 3 - Alinhadores Invisíveis",
           before: "/placeholder.svg?height=300&width=400",
           after: "/placeholder.svg?height=300&width=400",
-          description: "Paciente com mordida cruzada. Tratamento com alinhadores invisíveis por 14 meses.",
+          description:
+            "Paciente com mordida cruzada. Tratamento com alinhadores invisíveis por 14 meses.",
         },
       ],
     },
-  ]
+  ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-muted py-12 md:py-16 text-center border-b">
-        <div className="container">
-          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">Galeria de Sorrisos</h1>
-          <p className="mt-4  text-lg text-muted-foreground">
-            Confira os resultados dos tratamentos realizados na Clínica Marcelo Daltro
+      <section className="text-text-muted bg-header py-12 md:py-16 text-center border-b">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+            Galeria de Sorrisos
+          </h1>
+          <p className="mt-4  text-lg">
+            Confira os resultados dos tratamentos realizados na Clínica Marcelo
+            Daltro
           </p>
         </div>
       </section>
 
       {/* Galeria por Categoria */}
       <section className="py-12 md:py-16 p-10">
-        <div className="container">
+        <div className="container mx-auto px-4 ">
           <Tabs defaultValue="implantes" className="w-full">
             <TabsList className="mb-8 flex w-full flex-wrap justify-start gap-2">
               {categorias.map((categoria) => (
-                <TabsTrigger key={categoria.id} value={categoria.id} className="text-sm md:text-base border-ouro">
+                <TabsTrigger
+                  key={categoria.id}
+                  value={categoria.id}
+                  className="text-sm md:text-base text-primary border border-primary px-4 py-2 rounded 
+                 hover:bg-primary hover:text-white 
+                 data-[state=active]:bg-primary data-[state=active]:text-white"
+                >
                   {categoria.name}
                 </TabsTrigger>
               ))}
@@ -108,7 +125,7 @@ export default function GaleriaPage() {
               <TabsContent key={categoria.id} value={categoria.id}>
                 <div className="grid gap-12">
                   {categoria.cases.map((caso, i) => (
-                    <div key={i} className="rounded-lg bg-muted p-6">
+                    <div key={i} className="rounded-lg bg-surface p-6">
                       <h3 className="mb-4 text-xl font-bold">{caso.title}</h3>
                       <div className="grid gap-4 md:grid-cols-2">
                         <div>
@@ -132,7 +149,7 @@ export default function GaleriaPage() {
                           />
                         </div>
                       </div>
-                      <p className="mt-4 text-muted-foreground">{caso.description}</p>
+                      <p className="mt-4 text-text">{caso.description}</p>
                     </div>
                   ))}
                 </div>
@@ -142,16 +159,26 @@ export default function GaleriaPage() {
         </div>
       </section>
 
-      {/* Informações Adicionais */}
-      <section className="bg-muted py-12 md:py-16 p-10">
-        <div className="container text-center">
-          <h2 className="mb-4 text-2xl font-bold md:text-3xl">Transforme seu Sorriso</h2>
-          <p className="mx-auto mb-0 max-w-2xl text-lg text-muted-foreground">
-            Todos os casos apresentados são de pacientes reais da Clínica Marcelo Daltro. Os resultados podem variar de
-            acordo com as características individuais de cada paciente.
+      {/* CTA + Informações Adicionais */}
+      <section className="py-12 md:py-16 p-10">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+            Transforme seu Sorriso
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-text">
+            Todos os casos apresentados são de pacientes reais da Clínica
+            Marcelo Daltro. Os resultados podem variar de acordo com as
+            características individuais de cada paciente.
           </p>
+          <Button
+            size="lg"
+            asChild
+            className="text-text-muted   hover:text-on-primary"
+          >
+            <Link href="/contato">Agendar Consulta</Link>
+          </Button>
         </div>
       </section>
     </>
-  )
+  );
 }

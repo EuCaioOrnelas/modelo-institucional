@@ -1,14 +1,16 @@
-import Image from "next/image"
-import { CheckCircle } from "lucide-react"
+import Image from "next/image";
+import { CheckCircle } from "lucide-react";
 
 export default function SobrePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-muted py-12 md:py-16  text-center border-b ">
-        <div className="container ">
-          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">Sobre Nós</h1>
-          <p className="mt-4  text-lg text-muted-foreground  ">
+      <section className="bg-header py-12 md:py-16 text-center border-b text-text-muted">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+            Sobre Nós
+          </h1>
+          <p className="mt-4 text-lg text-text-muted max-w-2xl mx-auto">
             Conheça a história e a equipe da Clínica Marcelo Daltro
           </p>
         </div>
@@ -16,7 +18,7 @@ export default function SobrePage() {
 
       {/* Nossa História */}
       <section className="py-12 md:py-16 p-2">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="grid gap-8 md:grid-cols-2 md:gap-12 lg:items-center">
             <div>
               <Image
@@ -28,19 +30,24 @@ export default function SobrePage() {
               />
             </div>
             <div>
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">Nossa História</h2>
-              <p className="mb-4 text-lg text-muted-foreground">
-                A Clínica Marcelo Daltro foi fundada em 2008 pelo Dr. Marcelo Daltro, cirurgião-dentista com mais de 20
-                anos de experiência e especialização em implantodontia e estética dental.
+              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+                Nossa História
+              </h2>
+              <p className="mb-4 text-lg text-text">
+                A Clínica Marcelo Daltro foi fundada em 2008 pelo Dr. Marcelo
+                Daltro, cirurgião-dentista com mais de 20 anos de experiência e
+                especialização em implantodontia e estética dental.
               </p>
-              <p className="mb-4 text-lg text-muted-foreground">
-                O que começou como um pequeno consultório, hoje é uma clínica completa com equipamentos de última
-                geração e uma equipe multidisciplinar de profissionais altamente qualificados.
+              <p className="mb-4 text-lg text-text">
+                O que começou como um pequeno consultório, hoje é uma clínica
+                completa com equipamentos de última geração e uma equipe
+                multidisciplinar de profissionais altamente qualificados.
               </p>
-              <p className="mb-4 text-lg text-muted-foreground">
-                Nossa missão é proporcionar tratamentos odontológicos de excelência, aliando tecnologia de ponta,
-                conhecimento científico e atendimento humanizado para garantir a satisfação e o bem-estar dos nossos
-                pacientes.
+              <p className="mb-4 text-lg text-text">
+                Nossa missão é proporcionar tratamentos odontológicos de
+                excelência, aliando tecnologia de ponta, conhecimento científico
+                e atendimento humanizado para garantir a satisfação e o
+                bem-estar dos nossos pacientes.
               </p>
             </div>
           </div>
@@ -49,30 +56,39 @@ export default function SobrePage() {
 
       {/* Nossos Valores */}
       <section className="bg-muted py-12 md:py-16 ">
-        <div className="container">
-          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">Nossos Valores</h2>
+        <div className="container mx-auto px-4">
+          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">
+            Nossos Valores
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 title: "Excelência",
-                description: "Buscamos a excelência em todos os tratamentos e procedimentos realizados.",
+                description:
+                  "Buscamos a excelência em todos os tratamentos e procedimentos realizados.",
               },
               {
                 title: "Ética",
-                description: "Atuamos com transparência, honestidade e respeito em todas as relações.",
+                description:
+                  "Atuamos com transparência, honestidade e respeito em todas as relações.",
               },
               {
                 title: "Inovação",
-                description: "Investimos constantemente em tecnologia e atualização profissional.",
+                description:
+                  "Investimos constantemente em tecnologia e atualização profissional.",
               },
               {
                 title: "Humanização",
-                description: "Tratamos cada paciente de forma única, com empatia e acolhimento.",
+                description:
+                  "Tratamos cada paciente de forma única, com empatia e acolhimento.",
               },
             ].map((value, i) => (
-              <div key={i} className="rounded-lg bg-background p-6 shadow-sm border-ouro border-1">
+              <div
+                key={i}
+                className="rounded-lg bg-background p-6 shadow-sm border-border border-1"
+              >
                 <h3 className="mb-3 text-xl font-bold">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
+                <p className="text-text">{value.description}</p>
               </div>
             ))}
           </div>
@@ -81,8 +97,10 @@ export default function SobrePage() {
 
       {/* Nossa Equipe */}
       <section className="py-12 md:py-16">
-        <div className="container">
-          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">Nossa Equipe</h2>
+        <div className="container mx-auto px-4">
+          <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">
+            Nossa Equipe
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
@@ -127,7 +145,7 @@ export default function SobrePage() {
                   />
                 </div>
                 <h3 className="mb-1 text-xl font-bold">{member.name}</h3>
-                <p className="text-muted-foreground">{member.role}</p>
+                <p className="text-text">{member.role}</p>
               </div>
             ))}
           </div>
@@ -136,13 +154,16 @@ export default function SobrePage() {
 
       {/* Infraestrutura */}
       <section className="bg-muted py-12 md:py-16 p-10">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="grid gap-8 md:grid-cols-2 md:gap-12 lg:items-center">
             <div>
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">Nossa Infraestrutura</h2>
-              <p className="mb-6 text-lg text-muted-foreground">
-                A Clínica Marcelo Daltro conta com instalações modernas e equipamentos de última geração para oferecer o
-                que há de melhor em tratamentos odontológicos.
+              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+                Nossa Infraestrutura
+              </h2>
+              <p className="mb-6 text-lg text-text">
+                A Clínica Marcelo Daltro conta com instalações modernas e
+                equipamentos de última geração para oferecer o que há de melhor
+                em tratamentos odontológicos.
               </p>
               <ul className="space-y-3">
                 {[
@@ -194,5 +215,5 @@ export default function SobrePage() {
         </div>
       </section>
     </>
-  )
+  );
 }

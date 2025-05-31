@@ -1,15 +1,24 @@
-
 @import "tw-animate-css";
 
 @import "tailwindcss";
 
 @tailwind utilities;
 
-@theme{
-  --color-azule: #082135;
-  --color-azulc: #274c77;
-  --color-branco: #e7ecef;
-  --color-cinza: #8b8c89;
-  --color-vinho: #540b0e;
-  --color-ouro: #ab8349;
+@theme {
+  --color-text: #000000; /* textos principais */
+  --color-text-muted: #ffffff; /* textos secundários */
+
+  --color-background: #f8f8f8; /* fundo da página */
+  --color-surface: #ffffff; /* cards, áreas elevadas */
+
+  --color-header: #2a2a2a; /* cabeçalho */
+  --color-footer: #2a2a2a; /* rodapé */
+  --color-border: #2a2a2a; /* border */
+
+  --color-primary: #11a65f; /* cor principal da marca */
+  --color-on-primary: #0b5c35; /* textos sobre elementos primários */
+
+  --color-accent: #e9b11b; /* detalhes premium ou destaques leves */
+
+  --color-danger: #540b0e; /* alertas, mensagens de erro */
 }
